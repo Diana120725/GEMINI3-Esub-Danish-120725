@@ -1,4 +1,4 @@
-import { Theme, Translation, ChartDataPoint } from './types';
+import { Theme, Translation } from './types';
 
 // --- THEMES (20 GUBI-Inspired Styles) ---
 // Palettes are muted, using Stone/Zinc neutrals + Rich Jewel Tones

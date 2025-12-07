@@ -3,7 +3,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, 
   PieChart, Pie, Cell 
 } from 'recharts';
-import { Building, FileText, PieChart as PieIcon, ArrowRight, Zap, CheckCircle, Database, Shield, Monitor } from 'lucide-react';
+import { Building, FileText, PieChart as PieIcon, Zap, CheckCircle, Database, Shield, Monitor } from 'lucide-react';
 import { Theme, Language } from '../types';
 import { TEXTS, STATS_DATA, COMPARISON_DATA, GROWTH_DATA, PIE_DATA } from '../constants';
 
@@ -62,7 +62,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, lang }) => {
         
         <div className="relative max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
-            {['2022', '2023', '2024', '2025'].map((year, idx) => (
+            {['2022', '2023', '2024', '2025'].map((year) => (
               <div key={year} className="flex flex-col relative group">
                 <div className="flex items-center gap-4 mb-4">
                   <span className={`text-5xl font-serif font-bold opacity-20 group-hover:opacity-40 transition-opacity ${theme.colors.text}`}>{year.substring(0,4)}</span>
@@ -143,7 +143,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, lang }) => {
                   contentStyle={{borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', fontFamily: 'Lato', padding: '12px'}}
                 />
                 <Bar dataKey="count" fill={theme.colors.chartMain} radius={[6, 6, 6, 6]} barSize={30}>
-                    {GROWTH_DATA.map((entry, index) => (
+                    {GROWTH_DATA.map((_, index) => (
                         <Cell key={`cell-${index}`} fill={index === GROWTH_DATA.length -1 ? theme.colors.chartSecond : theme.colors.chartMain} />
                     ))}
                 </Bar>
@@ -179,7 +179,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, lang }) => {
                   stroke="none"
                   cornerRadius={8}
                 >
-                  {PIE_DATA.map((entry, index) => (
+                  {PIE_DATA.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={[theme.colors.chartMain, theme.colors.chartSecond, '#a8a29e'][index % 3]} />
                   ))}
                 </Pie>

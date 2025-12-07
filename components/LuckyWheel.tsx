@@ -31,10 +31,7 @@ const LuckyWheel: React.FC<LuckyWheelProps> = ({ onThemeSelect, currentLang }) =
       // The pointer is usually at top (0 degrees). 
       // We need to calculate which segment is at 0 degrees after rotation.
       // Since we rotate clockwise, the index is effectively reversed relative to the array order if mapped linearly
-      const normalizedAngle = totalRotation % 360;
       // This logic simplifies to just picking the randomSegment we decided earlier
-      // But let's sync strictly with the visual.
-      // For this simplified version, we just use the pre-calculated random index.
       const selectedTheme = THEMES[randomSegment];
       onThemeSelect(selectedTheme);
     }, 3000); // 3 seconds spin duration
