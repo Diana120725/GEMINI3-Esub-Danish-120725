@@ -247,7 +247,7 @@ const Dashboard: React.FC<DashboardProps> = ({ theme, lang }) => {
 
       {/* Footer */}
       <footer className="text-center text-stone-400 py-10 border-t border-stone-200">
-        <p className="mb-2 font-light text-sm tracking-wide">食品藥物管理署 > 查驗登記專區 | http://www.fda.gov.tw</p>
+        <p className="mb-2 font-light text-sm tracking-wide">食品藥物管理署 &gt; 查驗登記專區 | http://www.fda.gov.tw</p>
         <p className="font-light text-sm tracking-wide">諮詢專線：03-5732043 / 03-5743868</p>
       </footer>
 
